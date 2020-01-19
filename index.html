@@ -8,33 +8,48 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <style>
             * {box-sizing: border-box}
-            .tab {float: left;border: 0px solid #b0fff4;margin-left: 80px;background-color: #b0fff4;width: auto;height: auto}
-            .tab button {display: block;background-color: #b0fff4;color: black;font-family: "Open Sans", sans-serif;font-weight: 400;font-size: 14px;padding: 12px 16px;width: 100%;height: 44px;border: none;outline: none;text-align: left;cursor: pointer}
-            .tabcontent {float: left;padding-left: 20px;border: 1px solid #b0fff4; width: 70%;height: auto;display: none}
+            .tab {float: left;border: 0px solid #b0fff4;margin-left: 80px;margin-right: 10px;background-color: #b0fff4;width: auto;height: auto}
+            @media screen and (max-width: 540px) {.tab {margin-left: 10px}}
+            .tab button {display: block;background-color: #b0fff4;color: black;font-family: "Open Sans", sans-serif;font-weight: 400;font-size: 14px;padding: 12px 16px;width: 100%;height: auto;border: none;outline: none;text-align: left;cursor: pointer}
+            .tabcontent {float: left;padding-left: 20px;padding-right: 20px;border: 1px solid #b0fff4; width: 70%;height: auto;display: none}
+            @media screen and (max-width: 1458px) {.tabcontent {margin-left: 80px}}
+            @media screen and (max-width: 540px) {.tabcontent {margin-left: 10px;width:94%}}
+            @media screen and (max-width: 303px) {.tabcontent {width:179px}}
             .clearfix::after {content: "";clear: both;display: table}
             body {text-align: left;font-family: "Open Sans", sans-serif;background-color: #2e2e2e;padding: 20px 40px 0px 40px;color: #e1e1e1}
-            a.prof:link, a.prof:visited {color: #b0fff4; text-decoration: none}
-            a.prof:hover, a.prof:active {color: #69fff2}
+            p.prof {margin-top: -10px;padding: 0px 0px 0px 40px}
+            @media screen and (max-width: 388px) {p.prof {padding-left: 0px}}
+            a.prof:link, a.prof:visited {color: #b0fff4;text-decoration: none;font-size: auto}
+            a.prof:hover, a.prof:active {color: #69fff2;font-size: auto}
+            @media screen and (max-width: 453px) {a.prof {font-size: 16px}}
+            @media screen and (max-width: 388px) {a.prof {}}
             a.skins:link, a.skins:visited {background-color: #ff6666;color: white;padding: 14px 25px;text-align: center;width: auto;height: auto;text-decoration: none;display: inline-block}
             a.skins:hover, a.skins:active {background-color: #f44336}
-            h2 {margin: 30px 0px 10px 65px}
-            h3.equip {margin: -2px 0px 0px 80px}
-            p.equip {margin: 0px 0px 0px 81px}
-            a.image
-            @media screen and (max-width: 1600px) {.tabcontent {margin-left: 80px}}
-            @media screen and (max-width: 540px) {.tabcontent {margin-left: 10px}}
-            @media screen and (max-width: 540px) {.tab {margin-left: 10px}}
+            h1 {font-size: auto}
+            @media screen and (max-width: 453px) {h1 {font-size: 24px}}
+            h2 {margin: 30px 0px 10px 65px;font-size: auto}
             @media screen and (max-width: 540px) {h2 {margin-left: 0px}}
-            @media screen and (max-width: 100px) {.tab button {height: 55px}}
+            @media screen and (max-width :453px) {h2 {margin-left: 0px;font-size: 15px}}
+            h3 {font-size: auto}
+            @media screen and (max-width: 453px) {h3 {font-size: 14px}}
+            h3.equip {margin: -2px 0px 0px 80px}
             @media screen and (max-width: 540px) {h3.equip {margin-left: 10px}}
-            @media screen and (max-width: 540px) {p.equip {margin-left: 11px}}}
+            p {font-size: auto}
+            @media screen and (max-width: 453px) {p {font-size: 13px}}
+            p.image {margin: 0px 0px 0px 81px}
+            @media screen and (max-width: 540px) {p.image {margin-left: 11px}}}
+            a.image
         </style>
     </head>
     <body>
         <h1>rigellroy's osu! hub</h1>
-        <p style="margin-top: -10px; padding: 0px 0px 0px 40px">
+        <p class="prof">
             <a class="prof" href="https://osu.ppy.sh/users/12802076">View rigellroy's profile</a>
         </p>
+        <h2>Current Top Performance Play</h2>
+        <div>
+            <p class="image"><a href="https://lookatmysco.re/"><img style="padding-right: 10px;max-width: 100%" src="https://nicesco.re/d58a6252-f2fd-4501-889d-a5fa15cd0c79.png"></a></p>
+        </div>
         <h2>Skins</h2>
         <div class="tab">
             <button style="color: black" class="tablinks mdc-button mdc-ripple-surface" onclick="openSkin(event, 'NoColor')">NaanAtmosphere (NoColor)</button>
@@ -45,21 +60,21 @@
             <h3>NaanAtmosphere (NoColor)</h3>
             <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800">???</span><br>Changes made by: <span style="font-weight: 800">kinematik (Naan-E)</span>, <span style="font-weight: 800">rigellroy</span></p>
             <p style="padding-top: 20px">
-                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="NaanAtmosphere%20(NoColor).osk">Download</a>
+                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/NaanAtmosphere%20(NoColor).osk">Download</a>
             </p>
         </div>
         <div id="Trail" class="tabcontent">
             <h3>NaanAtmosphere (NoColor+Trail)</h3>
             <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800">???</span><br>Changes made by: <span style="font-weight: 800">kinematik (Naan-E)</span>, <span style="font-weight: 800">rigellroy</span></p>
             <p style="padding-top: 20px">
-                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="NaanAtmosphere%20(NoColor+Trail).osk">Download</a>
+                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/NaanAtmosphere%20(NoColor+Trail).osk">Download</a>
             </p>
         </div>
         <div id="Tuna-azr8" class="tabcontent">
             <h3>owoTuna {1.4} 『azr8』</h3>
-            <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800"></span><br>Changes made by: <span style="font-weight: 800"></span> <span style="font-weight: 800"></span></p>
+            <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800">FlyingTuna</span>?<br>Changes made by: <span style="font-weight: 800">azr8</span>, <span style="font-weight: 800">rigellroy</span></p>
             <p style="padding-top: 20px">
-                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="https://drive.google.com/open?id=141guAuFAlmublPRwAZDZ0EC9TBEvetp4">Download</a>
+                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/-%20%20%20%20%20%20#%20owoTuna%20%7B1.4%7D%20%E3%80%8Eazr8%E3%80%8F%20#%20%20%20%20%20%20-.osk">Download</a>
             </p>
         </div>
         <div class="clearfix"></div>
@@ -69,8 +84,8 @@
         <h2>Equipment and Settings</h2>
         <div>
             <h3 class="equip">Tablet</h3>
-            <p class="equip">Veikk S640:<br><span style="margin-left: 10px">Tablet Area:</span><br><img src="hakwu.tabletarea.JPG" style="margin: 10px 0px 0px 10px;max-width: 100%"></p>
-            <p class="equip" style="margin-top: 3px">In-game Sensitivity: <span style="font-weight: 800">1.00x</span></p>
+            <p class="image">Veikk S640:<br><span style="margin-left: 10px">Tablet Area:</span><br><img src="img/hakwu.tabletarea.jpg" style="margin: 10px 0px 0px 10px;max-width: 90%"></p>
+            <p class="image" style="margin-top: 3px">In-game Sensitivity: <span style="font-weight: 800">1.00x</span></p>
         </div>
     </body>
 </html>
