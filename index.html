@@ -2,6 +2,10 @@
     <title>rigellroy's osu! hub</title>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
@@ -15,9 +19,6 @@
             @media screen and (max-width: 1458px) {.tabcontent {margin-left: 80px}}
             @media screen and (max-width: 540px) {.tabcontent {margin-left: 10px;width:94%}}
             @media screen and (max-width: 303px) {.tabcontent {width:179px}}
-            .tab {float: left;border: 0px solid #b0fff4;margin-left: 80px;background-color: #b0fff4;width: auto;height: auto}
-            .tab button {display: block;background-color: #b0fff4;color: black;font-family: "Open Sans", sans-serif;font-weight: 400;font-size: 14px;padding: 12px 16px;width: 100%;height: 44px;border: none;outline: none;text-align: left;cursor: pointer}
-            .tabcontent {float: left;margin-left: 80px;padding-left: 20px;border: 1px solid #b0fff4; width: 70%;height: auto;display: none}
             .clearfix::after {content: "";clear: both;display: table}
             body {text-align: left;font-family: "Open Sans", sans-serif;background-color: #2e2e2e;padding: 20px 40px 0px 40px;color: #e1e1e1}
             p.prof {margin-top: -10px;padding: 0px 0px 0px 40px}
@@ -31,12 +32,6 @@
             h1 {font-size: auto}
             @media screen and (max-width: 453px) {h1 {font-size: 24px}}
             h2 {margin: 30px 0px 10px 65px;font-size: auto}
-            h2 {margin: 30px 0px 10px 65px}
-            h3.equip {margin: -2px 0px 0px 80px}
-            p.equip {margin: 0px 0px 0px 81px}
-            a.image
-            @media screen and (max-width: 540px) {.tab {margin-left: 10px}}
-            @media screen and (max-width: 540px) {.tabcontent {margin-left: 10px}}
             @media screen and (max-width: 540px) {h2 {margin-left: 0px}}
             @media screen and (max-width :453px) {h2 {margin-left: 0px;font-size: 15px}}
             h3 {font-size: auto}
@@ -57,13 +52,20 @@
         </p>
         <h2>Current Top Performance Play</h2>
         <div>
-            <p class="image"><a href="https://lookatmysco.re/"><img style="padding-right: 10px;max-width: 100%" src="https://nicesco.re/d58a6252-f2fd-4501-889d-a5fa15cd0c79.png"></a></p>
+            <p class="image"><a href="https://lookatmysco.re/"><img style="padding-right: 10px;max-width: 100%" src="img/20200110.topplay.png"></a></p>
         </div>
         <h2>Skins</h2>
         <div class="tab">
+            <button style="color: black" class="tablinks mdc-button mdc-ripple-surface" onclick="openSkin(event, 'Tuna-azr8')">owoTuna {1.4} 『azr8』</button>
             <button style="color: black" class="tablinks mdc-button mdc-ripple-surface" onclick="openSkin(event, 'NoColor')">NaanAtmosphere (NoColor)</button>
             <button style="color: black" class="tablinks mdc-button mdc-ripple-surface" onclick="openSkin(event, 'Trail')">NaanAtmosphere (NoColor+Trail)</button>
-            <button style="color: black" class="tablinks mdc-button mdc-ripple-surface" onclick="openSkin(event, 'Tuna-azr8')">owoTuna {1.4} 『azr8』</button>
+        </div>
+        <div id="Tuna-azr8" class="tabcontent">
+            <h3>owoTuna {1.4} 『azr8』</h3>
+            <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800">FlyingTuna</span>?<br>Changes made by: <span style="font-weight: 800">azr8</span>, <span style="font-weight: 800">rigellroy</span></p>
+            <p style="padding-top: 20px">
+                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/-%20%20%20%20%20%20#%20owoTuna%20%7B1.4%7D%20%E3%80%8Eazr8%E3%80%8F%20#%20%20%20%20%20%20-.osk">Download</a>
+            </p>
         </div>
         <div id="NoColor" class="tabcontent">
             <h3>NaanAtmosphere (NoColor)</h3>
@@ -79,13 +81,6 @@
                 <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/NaanAtmosphere%20(NoColor+Trail).osk">Download</a>
             </p>
         </div>
-        <div id="Tuna-azr8" class="tabcontent">
-            <h3>owoTuna {1.4} 『azr8』</h3>
-            <p style="margin-top: -10px">Skin made by: <span style="font-weight: 800">FlyingTuna</span>?<br>Changes made by: <span style="font-weight: 800">azr8</span>, <span style="font-weight: 800">rigellroy</span></p>
-            <p style="padding-top: 20px">
-                <a class="mdc-button mdc-button--raised mdc-ripple-surface" style="background-color: #ff6666" href="skins/-%20%20%20%20%20%20#%20owoTuna%20%7B1.4%7D%20%E3%80%8Eazr8%E3%80%8F%20#%20%20%20%20%20%20-.osk">Download</a>
-            </p>
-        </div>
         <div class="clearfix"></div>
         <script>
         function openSkin(evt, skinName) {var i, tabcontent, tablinks; tabcontent = document.getElementsByClassName("tabcontent"); for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = "none"} tablinks = document.getElementsByClassName("tablinks"); for (i = 0; i <tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(" active", "")} document.getElementById(skinName).style.display = "block"; evt.currentTarget.className += " active"}
@@ -95,8 +90,6 @@
             <h3 class="equip">Tablet</h3>
             <p class="image">Veikk S640:<br><span style="margin-left: 10px">Tablet Area:</span><br><img src="img/hakwu.tabletarea.jpg" style="margin: 10px 0px 0px 10px;max-width: 90%"></p>
             <p class="image" style="margin-top: 3px">In-game Sensitivity: <span style="font-weight: 800">1.00x</span></p>
-            <p class="equip">Veikk S640:<br><span style="margin-left: 10px">Tablet Area:</span><br><img src="img/hakwu.tabletarea.jpg" style="margin: 10px 0px 0px 10px;max-width: 100%"></p>
-            <p class="equip" style="margin-top: 3px">In-game Sensitivity: <span style="font-weight: 800">1.00x</span></p>
         </div>
     </body>
 </html>
